@@ -1,13 +1,18 @@
-import React from "react"
-import Header from "./Components/header"
-import Reviews from "./Components/reviews"
+import React from "react";
+import Home from "./Pages/home";
+import Login from "./Pages/login";
+import SignUp from "./Pages/signup";
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App(){
     return (
-        <>
-            <Header />
-            <Reviews />
-        </>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<SignUp/>}></Route>
+                <Route path='/login' element={<Login />}></Route>
+                <Route path='/home' element={<Home />}></Route>
+            </Routes>
+        </BrowserRouter>
     )
 }
 export default App

@@ -1,66 +1,130 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+/* styles.css */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
 }
-body{
-    font-family: sans-serif;
-    background-color: #282828;
-    color: #f2f2f2;
-    padding: 50px 45px;
-}
-.header{
-    max-width: 90%;    ;
-}
-.header > div > h1{
-    font-size: 1.5rem;
-    font-weight: 600 ;
-}
-.header > div > h1 > span{
-    color: #00b67a;
-}
-.header > div > h2{
-    font-size: 1.5rem;
-}
-.header > div > h2 > span{
-    background-color: #00b67a;
-    color: #282828;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: 600;
-}
-.card{
-    background-color: #191919;
-    border-radius: 10px;
-    padding: 20px;
-}
-.card-title{
-    color: #00b67a;
-    font-weight: 400;
-    display: flex;
-    justify-content: start;
-    gap: 10px;
-}
-.links{
-    display: flex;
-    justify-content: start;
-    width: 100%;
-    flex-wrap: wrap;
 
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #ffffff;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
-.card-link{
-    text-decoration: none;
-    background-color: #00b67a;
-    color: #282828;
-    border-radius: 6px;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: 40%;
-    padding: 10px ;
-    gap: 7px;
 
-    
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../public/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: brightness(50%); /* Darkens the background image */
+  z-index: -1; /* Places the overlay behind the content */
+}
 
+.container-fluid, .container {
+  padding: 0 15px;
+}
+
+.header {
+  background: rgba(0, 0, 0, 0.7); /* Darker header background */
+  padding: 20px;
+  text-align: center;
+}
+
+.header h1, .header h2 {
+  animation: slideIn 1s ease-out; /* Slide-in animation for header text */
+}
+
+.header h1 span, .header h2 span {
+  color: #1DA1F2;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.7); /* Dark transparent background for cards */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); /* Increased shadow for better separation */
+  color: #ffffff;
+  padding: 20px;
+  border: none; /* Removes border for a cleaner look */
+  margin-bottom: 20px; /* Adds space between cards */
+  animation: fadeIn 1s ease-out; /* Apply fade-in animation */
+}
+
+.card-title span {
+  margin-left: 10px;
+  color: #1DA1F2;
+}
+
+.card-subtitle {
+  color: #8c8c8c;
+}
+
+.card-link {
+  color: #1DA1F2;
+}
+
+.card-link i {
+  margin-right: 5px;
+}
+
+.form-control {
+  background: rgba(255, 255, 255, 0.2); /* Darker transparent background for form inputs */
+  border: none;
+  color: #ffffff;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.form-control::placeholder {
+  color: #cccccc;
+}
+
+.form-control:focus {
+  background: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.btn-primary {
+  background-color: #1DA1F2;
+  border-color: #1DA1F2;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #0a8cd2;
+  border-color: #0a8cd2;
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.btn-secondary {
+  background-color: rgba(255, 255, 255, 0.2); /* Darker secondary button background */
+  border-color: #1DA1F2;
+  color: #1DA1F2;
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #1DA1F2;
+  color: white;
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+.text-center p {
+  margin: 10px 0;
+}
+
+/* Hide labels for input fields */
+.form-label {
+  visibility: hidden;
 }
